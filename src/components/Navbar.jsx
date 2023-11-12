@@ -33,13 +33,19 @@ const Navbar = () => {
         <ul className="list-none hidden sm:flex flew-row gap-10">
           {navLinks.map((link) => (
             <li
-              key={link.id}
+              key={link.id || link.title}
               className={`${
                 active === link.title ? "text-white" : "text-secondary"
               } hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
-              <a href={`#${link.id}`}>{link.title}</a>
+              {link.url ? (
+                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  {link.title}
+                </a>
+              ) : (
+                <a href={`#${link.id}`}>{link.title}</a>
+              )}
             </li>
           ))}
         </ul>

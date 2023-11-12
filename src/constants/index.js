@@ -55,6 +55,10 @@ export const navLinks = [
     id: "contact",
     title: "Contact",
   },
+  {
+    title: "Gallery",
+    url: "https://gallery.hkt456.me",
+  },
 ];
 
 const services = [
